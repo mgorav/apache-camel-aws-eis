@@ -1,4 +1,4 @@
-package com.gonnect.sb.camel;
+package com.gonnect.sb.camel.routes;
 
 import org.apache.camel.builder.RouteBuilder;
 import org.springframework.stereotype.Component;

@@ -1,10 +1,9 @@
-package com.gonnect.sb.camel;
+package com.gonnect.sb.camel.controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Collections;
 import java.util.Map;
 
 import static java.util.Collections.emptyMap;

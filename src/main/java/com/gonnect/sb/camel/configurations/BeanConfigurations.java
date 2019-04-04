@@ -1,4 +1,4 @@
-package com.gonnect.sb.camel;
+package com.gonnect.sb.camel.configurations;
 
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
