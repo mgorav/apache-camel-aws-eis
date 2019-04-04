@@ -1,4 +1,4 @@
-package com.gonnect.sb.camel.routes;
+package com.gonnect.sb.camel.routes.aws;
 
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3;
