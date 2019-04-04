@@ -7,6 +7,9 @@ import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.client.builder.AwsClientBuilder;
 import com.amazonaws.regions.AwsRegionProvider;
 import com.amazonaws.regions.Regions;
+import com.amazonaws.services.kinesis.AmazonKinesis;
+import com.amazonaws.services.kinesis.AmazonKinesisClient;
+import com.amazonaws.services.kinesis.AmazonKinesisClientBuilder;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import org.apache.commons.math3.random.RandomDataGenerator;
@@ -33,6 +36,16 @@ public class BeanConfigurations {
         AmazonS3ClientBuilder clientBuilder = AmazonS3ClientBuilder.standard().withPathStyleAccessEnabled(true)
                 .disableChunkedEncoding()
                 .withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration("http://0.0.0.0:4572", US_EAST_1.getName()))
+                .withCredentials(credentialsProvider);
+        return clientBuilder.build();
+    }
+
+    @Bean
+    public AmazonKinesis amazonKinesisClient() {
+        AWSCredentials credentials = new BasicAWSCredentials("XXXXX", "YYYYY");
+        AWSCredentialsProvider credentialsProvider = new AWSStaticCredentialsProvider(credentials);
+        AmazonKinesisClientBuilder clientBuilder = AmazonKinesisClientBuilder.standard()
+                .withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration("http://0.0.0.0:4568", US_EAST_1.getName()))
                 .withCredentials(credentialsProvider);
         return clientBuilder.build();
     }

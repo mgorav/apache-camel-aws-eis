@@ -1,4 +1,4 @@
-package com.gonnect.sb.camel.routes.aws;
+package com.gonnect.sb.camel.routes.aws.s3;
 
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
  * A timer based Camel route that call REST service
  */
 @Component
-public class AwsRoute extends RouteBuilder {
+public class S3Route extends RouteBuilder {
     @Autowired
     private RandomDataGenerator randomDataGenerator;
     @Autowired
