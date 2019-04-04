@@ -1,4 +1,4 @@
-package com.gonnect.sb.camel.configurations;
+package com.gonnect.sb.camel.beans;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
