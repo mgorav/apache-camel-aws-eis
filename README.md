@@ -9,6 +9,7 @@ Check out my Github project which shows:
 2. Moving data to "Data Pipeline - AWS Kinesis & Apache Kafka"
 3. Moving API data to "Data Pipeline - AWS Kinesis" 
 
+It also demonstrates opinionated way of AWS based development without AWS account  but the same software will run on AWS cloud with "no fuss".
 
 ## EIA Pattern demonstrated
 
