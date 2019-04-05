@@ -21,6 +21,20 @@ Following EIA are implemented using Spring Boot & Apache Camel:
 
 ![alt text](./routes.png)
 
+Let's checkout one of routes which moved REST API data to AWS Kinesis:
+```java_holder_method_tree
+  restConfiguration().host("localhost").port(4001);
+
+        from("timer:hi?period={{timer.period}}")
+                .setHeader("id", simple("${random(1,3)}"))
+                .to("rest:get:cars/{id}")
+                .log("[going to Kinesis]"+"${body}")
+                .setHeader(KinesisConstants.PARTITION_KEY,simple("1"))
+                .setHeader(KinesisConstants.SHARD_ID, simple("1"))
+                .to("aws-kinesis://mykinesisstream?amazonKinesisClient=#amazonKinesisClient")
+                .to("log:out?showAll=true")
+                .log("Completed Writing to Kinesis");
+```
 To run this project you can setup/emulate AWS locally on you laptop by following below steps. It also comes with docker image of Apache Kafka + Zookeeper
 
 ### Step 1: Create *python* virtual environment
