@@ -8,7 +8,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
+@SpringBootApplication()
 public class SpringBootCamelApplication implements CommandLineRunner {
     @Autowired
     private AmazonS3 s3Client;
@@ -16,6 +16,7 @@ public class SpringBootCamelApplication implements CommandLineRunner {
     private AmazonKinesis kinesisClient;
 
     public static void main(String[] args) {
+        System.setProperty("com.amazonaws.sdk.disableCbor", "true");
         SpringApplication.run(SpringBootCamelApplication.class, args);
 
     }
@@ -24,11 +25,11 @@ public class SpringBootCamelApplication implements CommandLineRunner {
     public void run(String... args) throws Exception {
 //        s3Client.createBucket("test-bucket");
 //
-//        CreateStreamRequest createStreamRequest = new CreateStreamRequest();
-//        createStreamRequest.setStreamName( "mykinesisstream" );
-//        createStreamRequest.setShardCount( 1 );
-//
-//        kinesisClient.createStream(createStreamRequest);
+        CreateStreamRequest createStreamRequest = new CreateStreamRequest();
+        createStreamRequest.setStreamName( "mykinesisstream" );
+        createStreamRequest.setShardCount( 1 );
+
+        kinesisClient.createStream(createStreamRequest);
 
     }
 }

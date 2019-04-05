@@ -19,6 +19,10 @@ pip install localstack
 ### Step4: Start localstack
 
 ```bash
-localstack start
+localstack start --docker
 ```
 
+### Step 4: Start kafka with zookeeper
+```bash
+docker-compose up
+```

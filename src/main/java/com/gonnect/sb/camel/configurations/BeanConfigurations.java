@@ -45,7 +45,7 @@ public class BeanConfigurations {
         AWSCredentials credentials = new BasicAWSCredentials("XXXXX", "YYYYY");
         AWSCredentialsProvider credentialsProvider = new AWSStaticCredentialsProvider(credentials);
         AmazonKinesisClientBuilder clientBuilder = AmazonKinesisClientBuilder.standard()
-                .withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration("http://0.0.0.0:4568", US_EAST_1.getName()))
+                .withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration("http://localhost:4568", US_EAST_1.getName()))
                 .withCredentials(credentialsProvider);
         return clientBuilder.build();
     }
