@@ -144,8 +144,120 @@ Hello from Gonnect
 ```bash
 curl -XGET -s http://localhost:4001/actuator/camelroutes
 ```
+```json
+[
+  {
+    "id": "route1",
+    "uptime": "9.780 seconds",
+    "uptimeMillis": 9781,
+    "properties": {
+      "parent": "64beb2b7",
+      "rest": "false",
+      "description": null,
+      "id": "route1"
+    },
+    "status": "Started"
+  },
+  {
+    "id": "RandomTextGeneratorRoute",
+    "uptime": "9.780 seconds",
+    "uptimeMillis": 9780,
+    "properties": {
+      "parent": "4e4b7abd",
+      "rest": "false",
+      "description": null,
+      "id": "RandomTextGeneratorRoute"
+    },
+    "status": "Started"
+  },
+  {
+    "id": "FromKafka",
+    "uptime": "9.736 seconds",
+    "uptimeMillis": 9736,
+    "properties": {
+      "parent": "730cd2d0",
+      "rest": "false",
+      "description": null,
+      "id": "FromKafka"
+    },
+    "status": "Started"
+  },
+  {
+    "id": "kafkaStartWithPartitioner",
+    "group": "kafka-route-group",
+    "uptime": "9.735 seconds",
+    "uptimeMillis": 9735,
+    "properties": {
+      "parent": "f10d3e4",
+      "rest": "false",
+      "description": null,
+      "id": "kafkaStartWithPartitioner",
+      "group": "kafka-route-group"
+    },
+    "status": "Started"
+  },
+  {
+    "id": "route2",
+    "uptime": "9.734 seconds",
+    "uptimeMillis": 9734,
+    "properties": {
+      "parent": "38e4f7b",
+      "rest": "false",
+      "description": null,
+      "id": "route2"
+    },
+    "status": "Started"
+  },
+  {
+    "id": "hello",
+    "group": "hello-group",
+    "uptime": "9.734 seconds",
+    "uptimeMillis": 9734,
+    "properties": {
+      "parent": "1915ce41",
+      "rest": "false",
+      "description": null,
+      "id": "hello",
+      "group": "hello-group"
+    },
+    "status": "Started"
+  }
+]
+```
 
 ```bash
 curl -XGET -s http://localhost:4001/actuator/camelroutes/{id}/detail
 ```
 
+```json
+{
+  "id": "route1",
+  "uptime": "2 minutes",
+  "uptimeMillis": 164554,
+  "properties": {
+    "parent": "64beb2b7",
+    "rest": "false",
+    "description": null,
+    "id": "route1"
+  },
+  "status": "Started",
+  "details": {
+    "deltaProcessingTime": -4,
+    "exchangesInflight": 0,
+    "exchangesTotal": 82,
+    "externalRedeliveries": 0,
+    "failuresHandled": 0,
+    "firstExchangeCompletedExchangeId": "ID-APMGJGH67551C6-1554502425015-0-3",
+    "firstExchangeCompletedTimestamp": "2019-04-05T22:13:49.139+0000",
+    "lastExchangeCompletedExchangeId": "ID-APMGJGH67551C6-1554502425015-0-590",
+    "lastExchangeCompletedTimestamp": "2019-04-05T22:16:30.879+0000",
+    "lastProcessingTime": 10,
+    "maxProcessingTime": 408,
+    "meanProcessingTime": 21,
+    "minProcessingTime": 8,
+    "redeliveries": 0,
+    "totalProcessingTime": 1769,
+    "hasRouteController": false
+  }
+}
+```
