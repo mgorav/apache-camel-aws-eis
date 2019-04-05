@@ -19,6 +19,8 @@ Following EIA are implemented using Spring Boot & Apache Camel:
 3. Route to AWS Kinesis from REST end point
 4. Route to Apache Kafka
 
+![alt text](./routes.png)
+
 To run this project you can setup/emulate AWS locally on you laptop by following below steps. It also comes with docker image of Apache Kafka + Zookeeper
 
 ### Step 1: Create virtual environment
