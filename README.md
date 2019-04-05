@@ -2,7 +2,7 @@
 
 What is common between Navigation System & Data Engineering - "_**movement from A to B with location transparency**_". **Location transparency** means that "A" is unaware of "B". A navigation system handles "location transparency" by defining "routes" i.e. how to go from "A" to "B" by picking up the correct highway and as a driver "_I don't want to know how_"
 
-Can we apply same principle to "Data Engineering". The answer is  "Yes". Location transparency is achieved by implementation of "**Router Pattern**". The Router pattern has been recognized as an excellent way to accomplish Enterprise Application Integration (EAI). A router is a component  that connects its consumer  to one of multiple output strategies (as enunciated in the strategy design pattern). This pattern is also one powerful design pattern in the "micro-services architecture" as it can transform an application that is monolithic, non modular, non configurable among other bad things into a thing of beauty/piece of art. 
+Can we apply same principle to "Data Engineering". The answer is  "Yes". Location transparency is achieved by implementation of "**Router Pattern**". _The Router pattern has been recognized as an excellent way to accomplish Enterprise Application Integration (EAI)._ A router is a component  that connects its consumer  to one of multiple output strategies (as enunciated in the strategy design pattern). This pattern is also one powerful design pattern in the "micro-services architecture" as it can transform an application that is monolithic, non modular, non configurable among other bad things into a thing of beauty/piece of art. 
 
 Check out my Github project which shows:
 1. Moving data to "Data Lake - AWS S3"
