@@ -11,7 +11,7 @@ Check out my Github project which shows:
 
 It also demonstrates opinionated way of AWS based development without AWS account  but the same software will run on AWS cloud with "no fuss".
 
-## EIA Pattern demonstrated
+## EIA Patterns demonstrated
 
 Following EIA are implemented using Spring Boot & Apache Camel:
 1. Route to Spring bean
