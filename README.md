@@ -45,3 +45,6 @@ localstack start --docker
 ```bash
 docker-compose up
 ```
+
+## Play time
+Just run the Spring Boot application - "SpringBootCamelApplication" & observe the logs.
