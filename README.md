@@ -23,33 +23,34 @@ Following EIA are implemented using Spring Boot & Apache Camel:
 
 To run this project you can setup/emulate AWS locally on you laptop by following below steps. It also comes with docker image of Apache Kafka + Zookeeper
 
-### Step 1: Create virtual environment
+### Step 1: _Create virtual environment_
 ```bash
 python3 -m virtualenv localstackenv
 ```
 
-### Step 2: Activate virtual environment
+### Step 2: _Activate virtual environment_
 ```bash
 source localstackenv/bin/activate   
 ```
 
-### Step 3: Install AWS Local stack
+### Step 3: _Install AWS Local stack_
 ```bash
 pip install localstack    
 ```
-### Step4: Start localstack
+### Step4: _Start localstack_
 
 ```bash
 localstack start --docker
 ```
 
-### Step 4: Start kafka with zookeeper
+### Step 4: _Start kafka with zookeeper_
 ```bash
 docker-compose up
 ```
 
+
 ## Play time
-Just run the Spring Boot application - "SpringBootCamelApplication" & observe the logs.
+Just run the Spring Boot application - "**SpringBootCamelApplication**" from IDE or maven & observe the logs.
 ```bash
 04-05 22:28:08.085  INFO 15227 --- [timer://trigger] RandomTextGeneratorRoute                 : Completed uploading to s3 bucket
 2019-04-05 22:28:08.142  INFO 15227 --- [#2 - timer://hi] out                                      : Exchange[Id: ID-APMGJGH67551C6-1554496083321-0-3, ExchangePattern: InOnly, Properties: {CamelCharsetName=UTF-8, CamelCreatedTimestamp=Fri Apr 05 22:28:07 CEST 2019, CamelExternalRedelivered=false, CamelMessageHistory=[DefaultMessageHistory[routeId=route1, node=setHeader1], DefaultMessageHistory[routeId=route1, node=to1], DefaultMessageHistory[routeId=route1, node=log1], DefaultMessageHistory[routeId=route1, node=setHeader2], DefaultMessageHistory[routeId=route1, node=setHeader3], DefaultMessageHistory[routeId=route1, node=to2], DefaultMessageHistory[routeId=route1, node=to3]], CamelTimerCounter=1, CamelTimerFiredTime=Fri Apr 05 22:28:07 CEST 2019, CamelTimerName=hi, CamelTimerPeriod=2000, CamelToEndpoint=log://out?showAll=true}, Headers: {breadcrumbId=ID-APMGJGH67551C6-1554496083321-0-3, CamelAwsKinesisPartitionKey=1, CamelAwsKinesisSequenceNumber=49594520045010805967108657697625239938944816053437333506, CamelAwsKinesisShardId=shardId-000000000000, CamelHttpMethod=GET, CamelHttpResponseCode=200, CamelHttpResponseText=, Content-Type=application/json;charset=UTF-8, Date=Fri, 05 Apr 2019 20:28:08 GMT, firedTime=Fri Apr 05 22:28:07 CEST 2019, id=1, Transfer-Encoding=chunked}, BodyType: org.apache.camel.converter.stream.CachedOutputStream.WrappedInputStream, Body: [Body is instance of java.io.InputStream], Out: null: ]
