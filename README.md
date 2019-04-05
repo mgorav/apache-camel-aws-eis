@@ -1,11 +1,24 @@
-#Spring Boot Camel EIS
+# Router Pattern In Data/Software Engineering
 
-Following EIP are implemented using Spring Boot & Apache Camel:
+What is common between Navigation System & Data Engineering - "movement from A to B with location transparency". Location transparency means that "A" is unaware of "B". A navigation system handles "location transparency" by defining "routes" i.e. how to go from "A" to "B" by picking up the correct highway and as a driver "I don't want to know how"
+
+Can we apply same principle to "Data Engineering". The answer is  "Yes". Location transparency is achieved by implementation of "Router Pattern". The Router pattern has been recognized as an excellent way to accomplish Enterprise Application Integration (EAI). A router is a component  that connects its consumer  to one of multiple output strategies (as enunciated in the strategy design pattern). This pattern is also one powerful design pattern in the "micro-services architecture" as it can transform an application that is monolithic, non modular, non configurable among other bad things into a thing of beauty. 
+
+Check out my Github project which shows:
+1. Moving data to "Data Lake - AWS S3"
+2. Moving data to "Data Pipeline - AWS Kinesis & Apache Kafka"
+3. Moving API data to "Data Pipeline - AWS Kinesis" 
+
+
+## EIA Pattern demonstrated
+
+Following EIA are implemented using Spring Boot & Apache Camel:
 1. Route to Spring bean
 2. Route to AWS S3
 3. Route to AWS Kinesis from REST end point
 4. Route to Apache Kafka
 
+To run this project you can setup/emulate AWS locally on you laptop by following below steps. It also comes with docker image of Apache Kafka + Zookeeper
 
 ### Step 1: Create virtual environment
 ```bash
