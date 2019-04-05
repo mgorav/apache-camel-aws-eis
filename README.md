@@ -137,3 +137,13 @@ Hello from Gonnect
 Hello from Gonnect
 ```
 
+### Route Information
+
+```bash
+curl -XGET -s http://localhost:4001/actuator/camelroutes
+```
+
+```bash
+curl -XGET -s http://localhost:4001/actuator/camelroutes/{id}/detail
+```
+
