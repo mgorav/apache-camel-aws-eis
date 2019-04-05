@@ -5,9 +5,9 @@ What is common between Navigation System & Data Engineering - "_**movement from 
 Can we apply same principle to "Data Engineering". The answer is  "Yes". Location transparency is achieved by implementation of "**Router Pattern**". _The Router pattern has been recognized as an excellent way to accomplish Enterprise Application Integration (EAI)._ A router is a component  that connects its consumer  to one of multiple output strategies (as enunciated in the strategy design pattern). This pattern is also one powerful design pattern in the "micro-services architecture" as it can transform an application that is monolithic, non modular, non configurable among other bad things into a thing of beauty/piece of art. 
 
 Check out my Github project which shows:
-1. Moving data to "Data Lake - AWS S3"
+_**1. Moving data to "Data Lake - AWS S3"
 2. Moving data to "Data Pipeline - AWS Kinesis & Apache Kafka"
-3. Moving API data to "Data Pipeline - AWS Kinesis" 
+3. Moving API data to "Data Pipeline - AWS Kinesis"_** 
 
 It also demonstrates opinionated way of AWS based development without AWS account  but the same software will run on AWS cloud with "no fuss".
 
