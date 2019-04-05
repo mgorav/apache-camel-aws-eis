@@ -23,13 +23,20 @@ public class SpringBootCamelApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-//        s3Client.createBucket("test-bucket");
-//
-        CreateStreamRequest createStreamRequest = new CreateStreamRequest();
-        createStreamRequest.setStreamName( "mykinesisstream" );
-        createStreamRequest.setShardCount( 1 );
+        // Setup bucket and stream
+        if (!s3Client.doesBucketExistV2("test-bucket")) {
 
-        kinesisClient.createStream(createStreamRequest);
+            s3Client.createBucket("test-bucket");
+        }
+
+        if (!kinesisClient.listStreams().getStreamNames().contains("mykinesisstream")) {
+
+            CreateStreamRequest createStreamRequest = new CreateStreamRequest();
+            createStreamRequest.setStreamName("mykinesisstream");
+            createStreamRequest.setShardCount(1);
+
+            kinesisClient.createStream(createStreamRequest);
+        }
 
     }
 }

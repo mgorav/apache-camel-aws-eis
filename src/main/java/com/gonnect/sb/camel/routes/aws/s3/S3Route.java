@@ -1,7 +1,6 @@
 package com.gonnect.sb.camel.routes.aws.s3;
 
 import com.amazonaws.regions.Regions;
-import com.amazonaws.services.s3.AmazonS3;
 import org.apache.camel.LoggingLevel;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.aws.s3.S3Constants;
@@ -17,22 +16,15 @@ import org.springframework.stereotype.Component;
 public class S3Route extends RouteBuilder {
     @Autowired
     private RandomDataGenerator randomDataGenerator;
-    @Autowired
-    private AmazonS3 s3Client;
 
     @Override
     public void configure() throws Exception {
-
-        if (!s3Client.doesBucketExistV2("test-bucket")) {
-
-            s3Client.createBucket("test-bucket");
-        }
 
         from("timer:trigger?period=12h")
                 .routeId("RandomTextGeneratorRoute")
                 .process(exchange -> {
                     StringBuilder stringBuilder = new StringBuilder();
-                    for(int i=0;i<1000;i++) {
+                    for (int i = 0; i < 1000; i++) {
                         String str = RandomStringUtils.randomAlphabetic(randomDataGenerator.nextInt(1, 10));
                         stringBuilder.append(str).append(" ");
                     }
@@ -44,8 +36,8 @@ public class S3Route extends RouteBuilder {
                 .setHeader(S3Constants.KEY, constant("random-text.txt"))
                 .setHeader(S3Constants.CONTENT_TYPE, constant("text/plain"))
                 .setHeader(S3Constants.CONTENT_ENCODING, constant("UTF-8"))
-                .setHeader(S3Constants.CANNED_ACL,constant("PublicRead"))
-                .log(LoggingLevel.INFO,"File name used to upload : random-text.txt")
+                .setHeader(S3Constants.CANNED_ACL, constant("PublicRead"))
+                .log(LoggingLevel.INFO, "File name used to upload : random-text.txt")
                 .to("aws-s3://test-bucket?amazonS3Client=#amazonS3Client" + "&region=" + Regions.US_EAST_1)
                 .log("Completed uploading to s3 bucket");
     }
