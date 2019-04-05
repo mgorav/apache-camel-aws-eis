@@ -1,5 +1,10 @@
+#Spring Boot Camel EIS
 
-
+Following EIP are implemented using Spring Boot & Apache Camel:
+1. Route to Spring bean
+2. Route to AWS S3
+3. Route to AWS Kinesis from REST end point
+4. Route to Apache Kafka
 
 
 ### Step 1: Create virtual environment
