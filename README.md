@@ -23,27 +23,27 @@ Following EIA are implemented using Spring Boot & Apache Camel:
 
 To run this project you can setup/emulate AWS locally on you laptop by following below steps. It also comes with docker image of Apache Kafka + Zookeeper
 
-### Step 1: _Create virtual environment_
+### Step 1: Create *python* virtual environment
 ```bash
 python3 -m virtualenv localstackenv
 ```
 
-### Step 2: _Activate virtual environment_
+### Step 2: Activate virtual environment
 ```bash
 source localstackenv/bin/activate   
 ```
 
-### Step 3: _Install AWS Local stack_
+### Step 3: Install AWS Local stack
 ```bash
 pip install localstack    
 ```
-### Step4: _Start localstack_
+### Step4: Start localstack
 
 ```bash
 localstack start --docker
 ```
 
-### Step 4: _Start kafka with zookeeper_
+### Step 4: Start kafka with zookeeper
 ```bash
 docker-compose up
 ```
