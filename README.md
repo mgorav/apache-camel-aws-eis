@@ -10,6 +10,7 @@ Check out my Github project which shows:
 1. Moving data to "Data Lake - AWS S3"
 2. Moving data to "Data Pipeline - AWS Kinesis & Apache Kafka"
 3. Moving API data to "Data Pipeline - AWS Kinesis" 
+4. Content Based Routing (CBR) to "Data Pipeline Apache Kafka"
 
 It also demonstrates opinionated way of AWS based development without AWS account  but the same software will run on AWS cloud with "no fuss".
 
@@ -20,6 +21,7 @@ Following EIA are implemented using Spring Boot & Apache Camel:
 2. Route to AWS S3
 3. Route to AWS Kinesis from REST end point
 4. Route to Apache Kafka
+5. Content based routing
 
 ![alt text](./routes.png)
 
