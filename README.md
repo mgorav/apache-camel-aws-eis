@@ -193,7 +193,7 @@ curl -XGET -s http://localhost:4001/actuator/camelroutes
 ```bash
 curl -XGET -s http://localhost:4001/actuator/camelroutes/{id}/detail
 ```
-
+**NOTE**:  _id = route1_ 
 ```json
 {
   "id": "route1",
