@@ -28,12 +28,12 @@ public class KinesisRoute extends RouteBuilder {
 
         from("timer:hi?period={{timer.period}}")
                 .setHeader("id", simple("${random(1,3)}"))
-                .to("rest:get:cars/{id}")
+                    .to("rest:get:cars/{id}")
                 .log("[going to Kinesis]"+"${body}")
                 .setHeader(KinesisConstants.PARTITION_KEY,simple("1"))
                 .setHeader(KinesisConstants.SHARD_ID, simple("1"))
-                .to("aws-kinesis://mykinesisstream?amazonKinesisClient=#amazonKinesisClient")
-                .to("log:out?showAll=true")
+                    .to("aws-kinesis://mykinesisstream?amazonKinesisClient=#amazonKinesisClient")
+                    .to("log:out?showAll=true")
                 .log("Completed Writing to Kinesis");
 
 
