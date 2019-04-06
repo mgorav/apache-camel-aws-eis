@@ -32,7 +32,7 @@ public class CarController {
     }
 
     /**
-     * POST to this URL will routed to AWS Kinesis
+     * POST to this URL will be routed to AWS Kinesis
      * @param car
      */
     @PostMapping(value = "/cars")
