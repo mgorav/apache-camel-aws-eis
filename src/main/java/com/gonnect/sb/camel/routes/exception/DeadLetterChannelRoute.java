@@ -4,8 +4,11 @@ import org.apache.camel.LoggingLevel;
 import org.apache.camel.builder.RouteBuilder;
 import org.springframework.stereotype.Component;
 
+/**
+ * Global Exception handling route
+ */
 @Component
-public class ExceptionRoute extends RouteBuilder {
+public class DeadLetterChannelRoute extends RouteBuilder {
     @Override
     public void configure() throws Exception {
 
