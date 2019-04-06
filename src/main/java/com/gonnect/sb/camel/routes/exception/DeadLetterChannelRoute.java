@@ -15,6 +15,6 @@ public class DeadLetterChannelRoute extends RouteBuilder {
         errorHandler(deadLetterChannel("log:dead?level=ERROR")
                 .maximumRedeliveries(3).redeliveryDelay(1000)
                 .logStackTrace(true)
-                .retryAttemptedLogLevel(LoggingLevel.INFO.ERROR));
+                .retryAttemptedLogLevel(LoggingLevel.ERROR));
     }
 }
