@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
 
-@Component("cbr")
+@Component
 public class CbrRoute extends RouteBuilder {
 
     @Value("classpath:input")
