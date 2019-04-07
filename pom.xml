@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.gonnect.sb.camel</groupId>
-    <artifactId>spring-boot-camel</artifactId>
+    <artifactId>DataEngineeringIntegrationPatterns</artifactId>
     <version>0.0.1</version>
-    <name>spring-boot-camel</name>
-    <description>Integration Of Spring Boot With Camel</description>
+    <name>DataEngineeringIntegrationPatterns</name>
+    <description>Spring Boot And Camel Based Data Engineering Integration Patterns</description>
 
     <properties>
         <java.version>1.8</java.version>
